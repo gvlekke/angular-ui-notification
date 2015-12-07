@@ -24,7 +24,7 @@ Angular.js service providing simple notifications using Bootstrap 3 styles with 
 To install the package using bower and save as a dependency use...
 ```bash
 bower install angular-ui-notification --save
-```  
+```
 
 To install via NPM:
 ```bash
@@ -34,8 +34,8 @@ npm install angular-ui-notification --save
 ## Usage
  [Heres a plunker demo](http://plnkr.co/edit/5Gk8UVvzUsjyof7Gxsua?p=preview)
 
-  
-In your html/template add 
+
+In your html/template add
 ```html
 ...
   <link rel="stylesheet" href="angular-ui-notification.min.css">
@@ -74,27 +74,27 @@ And when you need to show notifications, inject service and call it!
 
 ```javascript
 angular.module('notificationTest').controller('notificationController', function($scope, Notification) {
- 
+
   Notification.primary('Primary notification');
   // or simply..
   Notification('Primary notification');
-  
+
   // Other Options
   // Success
   Notification.success('Success notification');
-  
+
   // With Title
   Notification({message: 'Primary notification', title: 'Primary notification'});
-  
+
   // Message with custom delay
   Notification.error({message: 'Error notification 1s', delay: 1000});
-  
+
   // Embed HTML within your message.....
   Notification.success({message: 'Success notification<br>Some other <b>content</b><br><a href="https://github.com/alexcrack/angular-ui-notification">This is a link</a><br><img src="https://angularjs.org/img/AngularJS-small.png">', title: 'Html content'});
 
   // Change position notification
   Notification.error({message: 'Error Bottom Right', positionY: 'bottom', positionX: 'right'});
-  
+
   // Replace message
   Notification.error({message: 'Error notification 1s', replaceMessage: true});
 }
@@ -126,6 +126,7 @@ The options list:
 | positionY         | "top", "bottom"           | "top"                          | Vertical position of the message                                         |
 | replaceMessage    | true, false               | false                          | If true every next appearing message replace old messages                |
 | templateUrl       | Any string                | "angular-ui-notification.html" | Custom template filename (URL)                                           |
+| onClose           | Any function              | undefined                      | Callback to execute when a notification element is closed. Callback receives the element as its argument. |
 
 Also you can pass the "scope" option. This is an angular scope option Notification scope will be inherited from. This option can be passed only in the methods. The default value is $rootScope
 
